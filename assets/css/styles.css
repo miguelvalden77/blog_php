@@ -1,0 +1,135 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    padding: 3rem;
+    padding-bottom: 0;
+}
+
+
+.container{
+    display: flex;
+    gap: 2rem;
+}
+
+.sidebar{
+    width: 250px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 3px rgb(80, 80, 80), -1px 1px 3px rgb(80, 80, 80), 1px -1px 3px rgb(80, 80, 80);
+}
+.login{
+    height: fit-content;
+    /* display: none; */
+}
+
+.register{
+    height: fit-content;
+}
+
+.error{
+    color: darkred;
+    margin-bottom: 0.5rem;
+}
+
+.exito{
+    color: darkgreen;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar h3{
+    margin-bottom: 0.5rem;
+}
+
+.sidebar label{
+    display: block;
+}
+
+.sidebar button{
+    padding: 0.5rem;
+    background-color: blue;
+    color: whitesmoke;
+    border-radius: 4px;
+    border: none;
+}
+
+.sidebar input{
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 0.15rem 0;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 20vh;
+    padding-bottom: 2rem;
+}
+
+.nav-menu{
+    display: flex;
+    list-style-type: none;
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.main-button{
+    background-color: blue;
+    padding: 0.5rem 1rem;
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    width: 120px;
+    height: 50px;
+    
+}
+
+.nav-menu li{
+    padding: 0.75rem;
+    border-right: 1px solid gray;
+}
+
+.contenido-principal{
+    border: 1px gray solid;
+    border-radius: 7px;
+    padding: 2rem 1.5rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-principal article{
+    margin-bottom: 1.5rem;
+}
+
+.contenido-principal article h2{
+    margin-bottom: 0.5rem;
+    color: blue;
+}
+
+.main-title{
+    margin-bottom: 1.75rem;
+    align-self: self-start;
+}
+
+.footer{
+    padding: 1rem;
+    border: 1px solid gray;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+.footer p{
+    text-align: center;
+}
