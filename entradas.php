@@ -1,5 +1,4 @@
-
-    <?php 
+<?php 
         require_once "includes/header.php"; 
         require_once "utils/helpers.php"; 
     ?>
@@ -7,7 +6,7 @@
     <div class="container">
 
         <main id="principal" class="contenido-principal">
-            <h1 class="main-title">Últimas entradas</h1>
+            <h1 class="main-title">Entradas</h1>
             
             <?php 
                 $entradas = getEntradas($db);
@@ -16,7 +15,7 @@
             ?>
 
                 <article>
-                    <a href="<?= $entrada["id"] ?>"><h2><?= $entrada["titulo"] ?></h2></a>
+                    <h2><?= $entrada["titulo"] ?></h2>
                     <span><?= $entrada["categoria"] ?></span>
                     <p><?= $entrada["descipcion"] ?></p>
                 </article>
@@ -35,10 +34,6 @@
                 <h2>Mi entrada</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur quam veniam quisquam, recusandae eligendi ab provident illo est sit cum temporibus mollitia labore, unde quis tempora quaerat eius rem!</p>
             </article>
-
-            <button class="main-button">
-                <a href="entradas.php">Ver todas</a>
-            </button>
         </main>
 
         <?php require_once "includes/aside.php"; ?>

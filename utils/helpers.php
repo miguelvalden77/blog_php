@@ -32,13 +32,34 @@
         return $result;
     }
 
-    function getEntradas($db){
-        $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id ORDER BY e.id DESC;";
+    function getEntradas($db, $limit = null, $categoria = null){
+        $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id ORDER BY e.id DESC";
+        if($limit != null){
+            $sql .= "LIMIT $limit";
+        }
+
+        if($categoria != null){
+            $sql = "SELECT * FROM entradas WHERE categoriaId = '$categoria'";
+        }
+
         $entradas = mysqli_query($db, $sql);
         $result = [];
 
         if($entradas && mysqli_num_rows($entradas) >= 1){
             $result = $entradas;
+        }
+
+        return $result;
+    }
+
+    function getOneEntrada($db, $id){
+        $sql = "SELECT * FROM `entradas` WHERE id = '$id';";
+
+        $entrada = mysqli_query($db, $sql);
+
+        $result = [];
+        if($entrada && mysqli_num_rows($entrada) >= 1){
+            $result = mysqli_fetch_assoc($entrada);
         }
 
         return $result;
