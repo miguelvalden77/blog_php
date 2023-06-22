@@ -17,6 +17,14 @@
                 <article>
                     <h2><?= $entrada["titulo"] ?></h2>
                     <p><?= $entrada["descipcion"] ?></p>
+                    <?php if($_SESSION["usuario"]["id"] == $entrada["usuarioId"]): ?>
+                        <a href="borrar.php?id=<?= $entrada["id"] ?>">
+                            <button>Eliminar</button>
+                        </a>
+                        <a href="editar_entrada.php?id=<?= $entrada["id"] ?>">
+                            <button>Editar</button>
+                        </a>
+                    <?php endif; ?>
                 </article>
         </main>
 

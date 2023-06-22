@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de videojuegos</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=<?php echo time(); ?>" type="text/css">
+    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
 </head>
 <body>
     

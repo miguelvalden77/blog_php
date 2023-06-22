@@ -53,7 +53,7 @@
     }
 
     function getOneEntrada($db, $id){
-        $sql = "SELECT * FROM `entradas` WHERE id = '$id';";
+        $sql = "SELECT e.*, CONCAT(u.nombre, u.apellidos) AS 'autor', u.id AS 'usuarioId' FROM entradas e INNER JOIN usuarios u ON e.usuarioId = u.id WHERE e.id = '$id';";
 
         $entrada = mysqli_query($db, $sql);
 

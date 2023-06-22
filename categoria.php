@@ -17,7 +17,7 @@
             ?>
 
                 <article>
-                    <a href="entrada.php/?id=<?= $entrada["id"] ?>"><h2><?= $entrada["titulo"] ?></h2></a>
+                    <a href="entrada.php?id=<?=$entrada['id']?>"><h2><?= $entrada["titulo"] ?></h2></a>
                     <p><?= $entrada["descipcion"] ?></p>
                 </article>
 
