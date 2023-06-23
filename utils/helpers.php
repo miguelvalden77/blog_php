@@ -65,4 +65,17 @@
         return $result;
     }
 
+    function getEntradaByName($db, $name){
+        $sql = "SELECT * FROM entradas WHERE titulo LIKE '%$name%' OR descipcion LIKE '%$name%';";
+        $entradas = mysqli_query($db, $sql);
+
+        $result = [];
+
+        if($entradas && mysqli_num_rows($entradas) >= 1){
+            $result = $entradas;
+        }
+
+        return $result;
+    }
+
 ?>

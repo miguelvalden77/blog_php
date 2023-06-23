@@ -7,6 +7,14 @@
     <a href="logout.php">Logout</a>
 <?php endif; ?>
 
+<aside class="sidebar login">
+        <h3>Buscar</h3>
+            <form action="buscar.php" method="post">
+                <input type="text" name="busqueda">    
+                <button>Buscar</button>
+            </form>
+        </aside>
+
 <?php if(!isset($_SESSION["usuario"])): ?>
     <aside class="sidebar login">
         <h3>Identifícate</h3>
