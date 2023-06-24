@@ -13,15 +13,15 @@
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
 </head>
-<body style="background-image: url('assets/images/fondo.jpg'); background-position: center; background-size: cover; background-attachment: fixed; padding-bottom: 1rem;">
-    <header class="header" style="border: none; backdrop-filter: blur(9px);">
-        <div>
-            <a href="index.php">
-                <h1>Blog de Videojuegos</h1>
+<body>
+    <header class="header" style="border: none;">
+        <div style="width: 100%;">
+            <a style="display: block;" href="index.php">
+                <h1 class="title-main" style="display: grid; place-items: center;">Blog de Videojuegos</h1>
             </a>
         </div>
         <nav class="nav-menu">
-            <li>
+            <li class="inicio">
                 <a href="index.php">Inicio</a>
             </li>
             <?php 
@@ -36,10 +36,10 @@
                 endwhile; 
                 endif;
             ?>
-            <li>
+            <li class="inicio">
                 <a href="">Sobre mí</a>
             </li>
-            <li>
+            <li class="inicio">
                 <a href="">Contacto</a>
             </li>
         </nav>

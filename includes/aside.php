@@ -7,15 +7,18 @@
     <a href="logout.php">Logout</a>
 <?php endif; ?>
 
-<aside class="sidebar login">
-        <h3>Buscar</h3>
+<?php if(isset($_SESSION["usuario"])): ?>
+        <aside class="sidebar login">
+            <h3>Buscar</h3>
             <form action="buscar.php" method="post">
                 <input type="text" name="busqueda">    
                 <button>Buscar</button>
             </form>
         </aside>
+<?php endif; ?>
 
 <?php if(!isset($_SESSION["usuario"])): ?>
+    <section class="auth_section">
     <aside class="sidebar login">
         <h3>Identifícate</h3>
         <?php if(isset($_SESSION["error_login"])): ?>
@@ -32,7 +35,7 @@
                 
                 <button>Entrar</button>
             </form>
-        </aside>
+    </aside>
         
 <aside class="sidebar register">
     <h3>Registrate</h3>
@@ -69,4 +72,5 @@
             </form>
             <?php borrarErrores() ?>
         </aside>
+    </section>
         <?php endif; ?>
