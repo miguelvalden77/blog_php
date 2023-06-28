@@ -9,6 +9,7 @@
         <main id="principal" class="contenido-principal">
             <h1 class="main-title">Últimas entradas</h1>
             
+            <div class="article_container">
             <?php 
                 $entradas = getEntradas($db);
                 if(!empty($entradas)):
@@ -25,16 +26,7 @@
                 endwhile;
                 endif;
             ?>
-            
-            <article>
-                <h2>Mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur quam veniam quisquam, recusandae eligendi ab provident illo est sit cum temporibus mollitia labore, unde quis tempora quaerat eius rem!</p>
-            </article>
-            
-            <article>
-                <h2>Mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur quam veniam quisquam, recusandae eligendi ab provident illo est sit cum temporibus mollitia labore, unde quis tempora quaerat eius rem!</p>
-            </article>
+            </div>
 
             <button class="main-button">
                 <a href="entradas.php">Ver todas</a>

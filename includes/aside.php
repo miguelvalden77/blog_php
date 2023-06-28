@@ -1,20 +1,24 @@
 <?php if(isset($_SESSION["usuario"])): ?>
 
-    <h3><?= $_SESSION["usuario"]["nombre"] ?></h3>
-    <a href="mis_datos.php">Mis datos</a>
-    <a href="crear_entrada.php">Crear entradas</a>
-    <a href="crear_categoria.php">Crear categoria</a>
-    <a href="logout.php">Logout</a>
-<?php endif; ?>
+    <div class="usuario_section">
+        <section class="mis_datos sidebar login">
+            <h3><?= $_SESSION["usuario"]["nombre"] ?></h3>
+            <div class="datos_section">
+                <a class="datos_button bg-primary" href="mis_datos.php">Mis datos</a>
+                <a class="datos_button bg-secondary" href="crear_entrada.php">Crear entradas</a>
+                <a class="datos_button bg-alter" href="crear_categoria.php">Crear categoria</a>
+                <a class="datos_button bg-red" href="logout.php">Logout</a>
+            </div>
+        </section>
 
-<?php if(isset($_SESSION["usuario"])): ?>
         <aside class="sidebar login">
             <h3>Buscar</h3>
             <form action="buscar.php" method="post">
                 <input type="text" name="busqueda">    
-                <button>Buscar</button>
+                <button class="main-button">Buscar</button>
             </form>
         </aside>
+    </div>
 <?php endif; ?>
 
 <?php if(!isset($_SESSION["usuario"])): ?>
@@ -33,7 +37,7 @@
                 <label for="">Contraseña</label>
                 <input type="password" name="contraseña">
                 
-                <button>Entrar</button>
+                <button class="main-button">Entrar</button>
             </form>
     </aside>
         
@@ -68,7 +72,7 @@
                 <input type="password" name="contraseña">
                 <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "contraseña") : ""; ?>
                 
-                <button>Registrarse</button>
+                <button class="main-button">Registrarse</button>
             </form>
             <?php borrarErrores() ?>
         </aside>
