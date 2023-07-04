@@ -74,8 +74,9 @@ body{
 }
 
 .error{
-    color: darkred;
+    color: rgb(175, 3, 3);
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .exito{
@@ -86,6 +87,17 @@ body{
 .sidebar h3{
     margin-bottom: 0.5rem;
     color: whitesmoke;
+}
+
+.label-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1.25rem;
+}
+
+.label-form input, select{
+    padding: 0.25rem 0.4rem;
 }
 
 .sidebar label{
@@ -123,6 +135,45 @@ a{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.form-label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.datos_form_button{
+    margin-top: 2.25rem;
+    padding: 1rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    font-family: Belanosima;
+    color: whitesmoke;
+    transform: scale(1);
+    transition: transform 0.3s linear;
+}
+
+.datos_form_button:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s linear;
+}
+
+.datos_title{
+    text-align: center;
+    color: whitesmoke;
+}
+
+.datos_form{
+    margin-top: 2.25rem;
+    color: whitesmoke;
+    display: flex;
+    gap: 1rem;
+}
+
+.datos_form input{
+    padding: 0.3rem 0.5rem;
 }
 
 .datos_button{
@@ -224,11 +275,23 @@ a{
     color: whitesmoke;
 }
 
+.crear_categoria_form{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.crear_categoria_form input{
+    padding: 0.5rem 0.75rem;
+}
+
 .contenido-principal{
     border: 1px gray solid;
     border-radius: 7px;
     padding: 2rem 1.5rem;
     width: 70%;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;

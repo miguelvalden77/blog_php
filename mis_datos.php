@@ -3,23 +3,31 @@
 
 <div class="container">
     <main class="contenido-principal">
-        <h1>Mis datos</h1>
+        <h1 class="datos_title">Mis datos</h1>
         <p><?= isset($_SESSION["errores"]["general"]) ? $_SESSION["errores"]["general"] : "" ?></p>
-        <form action="actualizar.php" method="post">
+        <form style="display: grid; place-items: center;" action="actualizar.php" method="post">
                     
-                <label for="">Nombre</label>
-                <input type="text" name="nombre" value="<?= $_SESSION["usuario"]["nombre"] ?>">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "nombre") : ""; ?>
-                
-                <label for="">Apellidos</label>
-                <input type="text" name="apellidos" value="<?= $_SESSION["usuario"]["apellidos"] ?>">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
+                <section class="datos_form" >
+                    <div class="form-label">
+                        <h3>Nombre</h3>
+                        <input type="text" name="nombre" value="<?= $_SESSION["usuario"]["nombre"] ?>">
+                        <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "nombre") : ""; ?>
+                    </div>
+                    
+                    <div class="form-label">
+                        <h3>Apellidos</h3>
+                        <input type="text" name="apellidos" value="<?= $_SESSION["usuario"]["apellidos"] ?>">
+                        <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
+                    </div>
 
-                <label for="">Email</label>
-                <input type="text" name="email" value="<?= $_SESSION["usuario"]["email"] ?>">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
+                    <div class="form-label">
+                        <h3>Email</h3>
+                        <input type="text" name="email" value="<?= $_SESSION["usuario"]["email"] ?>">
+                        <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
+                    </div>
+                </section>
                 
-                <button>Actualizar</button>
+                <button class="bg-primary datos_form_button">Actualizar</button>
 
             </form>
     </main>

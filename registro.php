@@ -44,7 +44,7 @@
       $contraseña_validado = true;
     } else {
       $contraseña_validado = false;
-      $errores["contraseña"] = "La contraseña no es válido";
+      $errores["contraseña"] = "La contraseña no es válida";
     }
 
     $guardar_usuario = false;

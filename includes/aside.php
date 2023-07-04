@@ -6,15 +6,15 @@
             <div class="datos_section">
                 <a class="datos_button bg-primary" href="mis_datos.php">Mis datos</a>
                 <a class="datos_button bg-secondary" href="crear_entrada.php">Crear entradas</a>
-                <a class="datos_button bg-alter" href="crear_categoria.php">Crear categoria</a>
+                <a class="datos_button bg-alter" href="categorias.php">Categorias</a>
                 <a class="datos_button bg-red" href="logout.php">Logout</a>
             </div>
         </section>
 
         <aside class="sidebar login">
             <h3>Buscar</h3>
-            <form action="buscar.php" method="post">
-                <input type="text" name="busqueda">    
+            <form id="buscar_form" action="buscar.php" method="post">
+                <input type="text" name="busqueda" id="busqueda">    
                 <button class="main-button">Buscar</button>
             </form>
         </aside>
@@ -77,4 +77,14 @@
             <?php borrarErrores() ?>
         </aside>
     </section>
-        <?php endif; ?>
+    <?php endif; ?>
+
+    <script>
+        const form = document.getElementById("buscar_form")
+        const input = document.getElementById("busqueda")
+            
+        form.addEventListener("submit", (evt)=>{
+            console.log(input.value)
+            if(input.value == "") evt.preventDefault()
+        })
+    </script>

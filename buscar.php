@@ -2,7 +2,7 @@
     require_once "includes/header.php"; 
     require_once "utils/helpers.php";
     
-    if(!isset($_POST["busqueda"])){
+    if(!isset($_POST["busqueda"]) || empty($_POST["busqueda"])){
         header("Location: index.php");
     }
 
@@ -28,8 +28,12 @@
 
             <?php 
                 endwhile;
-                endif;
+                elseif(empty($entradas)):
             ?>
+
+                <h2 style="color: blue;">No hay resultados</h2>
+
+            <?php endif; ?>
         </main>
 
         <?php require_once "includes/aside.php"; ?>

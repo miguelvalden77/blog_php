@@ -23,8 +23,12 @@
 
             <?php 
                 endwhile;
-                endif;
+                elseif(empty($entradas)):
             ?>
+        
+                <h2 style="color: blue;">No hay resultados</h2>
+        
+            <?php endif; ?>
         </main>
 
         <?php require_once "includes/aside.php"; ?>
