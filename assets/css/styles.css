@@ -67,7 +67,12 @@ body{
     /* display: none; */
 }
 
-
+.article_section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
 
 .register{
     height: fit-content;

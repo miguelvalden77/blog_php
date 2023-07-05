@@ -10,6 +10,7 @@
         <main id="principal" class="contenido-principal">
             <h1 class="main-title">Entradas</h1>
             
+            <section class="article_section">
             <?php 
                 $entradas = getEntradas($db, null, $cat);
                 if(!empty($entradas)):
@@ -20,13 +21,14 @@
                     <a href="entrada.php?id=<?=$entrada['id']?>"><h2><?= $entrada["titulo"] ?></h2></a>
                     <p><?= $entrada["descipcion"] ?></p>
                 </article>
-
+                    
             <?php 
                 endwhile;
                 elseif(empty($entradas)):
             ?>
+            </section>
         
-                <h2 style="color: blue;">No hay resultados</h2>
+        <h2 style="color: blue;">No hay resultados</h2>
         
             <?php endif; ?>
         </main>
