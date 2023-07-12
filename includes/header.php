@@ -11,7 +11,7 @@
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=<?php echo time() ?>" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">

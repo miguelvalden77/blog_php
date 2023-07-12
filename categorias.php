@@ -1,6 +1,7 @@
 <?php 
     require_once "includes/header.php"; 
     require_once "utils/helpers.php";  
+    require_once "utils/redirection.php";
 ?>
 
     <div class="container">
@@ -13,6 +14,7 @@
             <?php 
                 $categorias = getCategorias($db);
                 if(!empty($categorias)):
+                echo "<section class='categotias_section'>";
                 while($categoria = mysqli_fetch_assoc($categorias)) :
             ?>
 
@@ -23,6 +25,7 @@
 
             <?php 
                 endwhile;
+                echo "</section>";
                 elseif(empty($categorias)):
             ?>
         

@@ -78,4 +78,17 @@
         return $result;
     }
 
+    function getComments($db, $postId){
+        $sql = "SELECT * FROM comentarios WHERE postId = '$postId';";
+        $comentarios = mysqli_query($db, $sql);
+
+        $result = [];
+
+        if($comentarios && mysqli_num_rows($comentarios) >= 1){
+            $result = $comentarios;
+        }
+
+        return $result;
+    }
+
 ?>

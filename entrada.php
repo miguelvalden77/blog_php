@@ -1,8 +1,8 @@
 <?php 
-        require_once "includes/header.php"; 
-        require_once "utils/helpers.php"; 
+    require_once "./includes/header.php"; 
+    require_once "./utils/helpers.php";
 
-        $id = intval($_GET["id"]);
+    $id = intval($_GET["id"]);
 ?>
 
     <div class="container">
@@ -18,13 +18,16 @@
                     <h2><?= $entrada["titulo"] ?></h2>
                     <p><?= $entrada["descipcion"] ?></p>
                     <?php if($_SESSION["usuario"]["id"] == $entrada["usuarioId"]): ?>
-                        <a href="borrar.php?id=<?= $entrada["id"] ?>">
-                            <button>Eliminar</button>
-                        </a>
-                        <a href="editar_entrada.php?id=<?= $entrada["id"] ?>">
-                            <button>Editar</button>
-                        </a>
+                        <section style="display: flex; gap: 1rem; padding-top: 1rem;">
+                            <a href="borrar.php?id=<?= $entrada["id"] ?>">
+                                <button style="border: none; color: whitesmoke;" class="datos_button bg-red">Eliminar</button>
+                            </a>
+                            <a href="editar_entrada.php?id=<?= $entrada["id"] ?>">
+                                <button style="border: none; color: whitesmoke;" class="datos_button bg-alter">Editar</button>
+                            </a>
+                        </section>
                     <?php endif; ?>
+                    <?php require_once "includes/comments.php" ?>
                 </article>
         </main>
 
