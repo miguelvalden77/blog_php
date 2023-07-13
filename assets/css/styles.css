@@ -185,6 +185,16 @@ a{
     display: flex;
 }
 
+.caracteres{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    text-align: center;
+    margin-right: 0.25rem;
+}
+
 .datos_title{
     text-align: center;
     color: whitesmoke;

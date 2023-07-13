@@ -20,7 +20,9 @@
 
                 <article>
                     <a href="categoria.php?id=<?=$categoria['id']?>"><h2><?= $categoria["nombre"] ?></h2></a>
-                    <a href="eliminar_categoria.php?id=<?=$categoria['id']?>">Borrar</a>
+                    <?php if($_SESSION["usuario"]["rol"] != 1 && $_SESSION["usuario"]): ?>
+                        <a href="eliminar_categoria.php?id=<?=$categoria['id']?>">Borrar</a>
+                    <?php endif; ?>
                 </article>
 
             <?php 
