@@ -1,18 +1,17 @@
 <?php
 
-    require_once "includes/db.php";
+require_once "includes/db.php";
 
-    if(!isset($_POST)){
-        header("Location: crear_entrada.php");
-    }
+if (!isset($_POST)) {
+    header("Location: crear_entrada.php");
+}
 
-    $comentario = isset($_POST["comentario"]) ? $_POST["comentario"] : null;
-    $postId = isset($_POST["postId"]) ? $_POST["postId"] : null;
-    $usuarioId = $_SESSION["usuario"]["id"];
+$comentario = isset($_POST["comentario"]) ? $_POST["comentario"] : null;
+$postId = isset($_POST["postId"]) ? $_POST["postId"] : null;
+$usuarioId = $_SESSION["usuario"]["id"];
 
-    $sql = "INSERT INTO `comentarios` VALUES(NULL, '$comentario', '$usuarioId', '$postId');";
+$sql = "INSERT INTO `comentarios` VALUES(NULL, '$postId', '$usuarioId', '$comentario');";
 
-    mysqli_query($db, $sql);
+mysqli_query($db, $sql);
 
-    header("Location: index.php");
-?>
+header("Location: index.php");

@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,11 @@
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="./assets/css/styles.css?v=<?php echo time() ?>" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="assets/images/icono.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/icono.png">
 </head>
+
 <body>
     <header class="header" style="border: none;">
         <div style="width: 100%;">
@@ -28,21 +30,18 @@
             <li class="inicio">
                 <a href="index.php">Inicio</a>
             </li>
-            <?php 
-                $categorias = getCategorias($db);
-                if(!empty($categorias)):
-                while($categoria = mysqli_fetch_assoc($categorias)): 
+            <?php
+            $categorias = getCategorias($db);
+            if (!empty($categorias)) :
+                while ($categoria = mysqli_fetch_assoc($categorias)) :
             ?>
-                <li>
-                    <a href="categoria.php?id=<?= $categoria["id"]?>"><?= $categoria["nombre"] ?></a>
-                </li>
-            <?php 
-                endwhile; 
-                endif;
+                    <li>
+                        <a href="categoria.php?id=<?= $categoria["id"] ?>&categoria=<?= $categoria["nombre"] ?>"><?= $categoria["nombre"] ?></a>
+                    </li>
+            <?php
+                endwhile;
+            endif;
             ?>
-            <li class="inicio">
-                <a href="">Sobre mí</a>
-            </li>
             <li class="inicio">
                 <a href="">Contacto</a>
             </li>

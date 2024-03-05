@@ -12,10 +12,8 @@ $categoriaId = isset($_POST["categoriaId"]) ? $_POST["categoriaId"] : null;
 $usuarioId = $_SESSION["usuario"]["id"];
 $id = $_GET["id"];
 
-$sql = "UPDATE `entradas` SET  titulo = '$titulo', descipcion = '$descripcion', usuarioId = '$usuarioId', categoriaId = '$categoriaId' WHERE id = $id;";
+$sql = "UPDATE `entradas` SET  titulo = '$titulo', descripcion = '$descripcion', usuarioId = '$usuarioId', categoriaId = '$categoriaId' WHERE id = $id;";
 
 $result = mysqli_query($db, $sql);
 
 header("Location: index.php");
-
-?>

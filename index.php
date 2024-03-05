@@ -1,43 +1,45 @@
+<?php
+require_once "includes/header.php";
+require_once "utils/helpers.php";
+?>
 
-    <?php 
-        require_once "includes/header.php"; 
-        require_once "utils/helpers.php"; 
-    ?>
+<div class="container">
 
-    <div class="container">
+    <main id="principal" class="contenido-principal">
+        <h1 class="main-title">Últimas entradas</h1>
 
-        <main id="principal" class="contenido-principal">
-            <h1 class="main-title">Últimas entradas</h1>
-            
-            <div class="article_container">
-            <?php 
-                $entradas = getEntradas($db);
-                if(!empty($entradas)):
-                while($entrada = mysqli_fetch_assoc($entradas)) :
+        <div class="article_container">
+            <?php
+            $entradas = getEntradas($db);
+            if (!empty($entradas)) :
+                while ($entrada = mysqli_fetch_assoc($entradas)) :
             ?>
 
-                <article>
-                    <a href="entrada.php/?id=<?= $entrada["id"] ?>"><h2><?= $entrada["titulo"] ?></h2></a>
-                    <span><?= $entrada["categoria"] ?></span>
-                    <p><?= $entrada["descipcion"] ?></p>
-                </article>
+                    <article>
+                        <a href="entrada.php?id=<?= $entrada["id"] ?>">
+                            <h2><?= $entrada["titulo"] ?></h2>
+                        </a>
+                        <p class="category_title"><?= $entrada["categoria"] ?></p>
+                        <p class="descripcion_entrada"><?= $entrada["descripcion"] ?></p>
+                    </article>
 
-            <?php 
+            <?php
                 endwhile;
-                endif;
+            endif;
             ?>
-            </div>
+        </div>
 
-            <button class="main-button">
-                <a href="entradas.php">Ver todas</a>
-            </button>
-        </main>
+        <button class="main-button">
+            <a href="entradas.php">Ver todas</a>
+        </button>
+    </main>
 
-        <?php require_once "includes/aside.php"; ?>
+    <?php require_once "includes/aside.php"; ?>
 
-    </div>
+</div>
 
-    <?php require_once "includes/footer.php"; ?>
+<?php require_once "includes/footer.php"; ?>
 
 </body>
+
 </html>
