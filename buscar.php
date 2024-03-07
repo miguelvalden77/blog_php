@@ -16,7 +16,8 @@ $nombre = $_POST["busqueda"];
         <h1 class="main-title">Busqueda: <?= $_POST["busqueda"] ?></h1>
 
         <?php
-        $entradas = getEntradaByName($db, $nombre);
+        $resultado = getEntradaByName($db, $nombre);
+        $entradas = $resultado["result"];
         if (!empty($entradas)) :
             while ($entrada = mysqli_fetch_assoc($entradas)) :
         ?>

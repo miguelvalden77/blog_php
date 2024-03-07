@@ -35,25 +35,36 @@ function getCategorias($db)
     return $result;
 }
 
-function getEntradas($db, $limit = null, $categoria = null)
+function getEntradas($db, $page = 1, $categoria = null)
 {
-    $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id ORDER BY e.id DESC";
-    if ($limit != null) {
-        $sql .= "LIMIT $limit";
-    }
+
+    $limit = $page * 4;
+    $saltar = $limit - 4;
+
+    $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id LIMIT $limit OFFSET $saltar";
 
     if ($categoria != null) {
-        $sql = "SELECT * FROM entradas WHERE categoriaId = '$categoria'";
+        $sql = "SELECT * FROM entradas WHERE categoriaId = '$categoria' LIMIT $limit OFFSET $saltar";
     }
 
     $entradas = mysqli_query($db, $sql);
     $result = [];
+    $resultado = array("result" => $result, "total" => 0);
 
     if ($entradas && mysqli_num_rows($entradas) >= 1) {
         $result = $entradas;
+
+        if ($categoria != null) {
+            $num = mysqli_query($db, "SELECT COUNT(*) AS total FROM entradas WHERE categoriaId = $categoria");
+        } else {
+            $num = mysqli_query($db, "SELECT COUNT(*) AS total FROM entradas");
+        }
+        $totalNum = $num->fetch_assoc();
+        $total = (int)$totalNum['total'];
+        $resultado = array("result" => $result, "total" => $total);
     }
 
-    return $result;
+    return $resultado;
 }
 
 function getOneEntrada($db, $id)

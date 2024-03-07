@@ -1,6 +1,14 @@
 <?php
 require_once "includes/header.php";
 require_once "utils/helpers.php";
+
+
+
+$page = 1;
+
+if (isset($_GET["page"])) {
+    $page = intval($_GET["page"]);
+}
 ?>
 
 <div class="container">
@@ -8,9 +16,10 @@ require_once "utils/helpers.php";
     <main id="principal" class="contenido-principal">
         <h1 class="main-title">Últimas entradas</h1>
 
-        <div class="article_container">
+        <div class="article_section">
             <?php
-            $entradas = getEntradas($db);
+            $resultado = getEntradas($db, $page);
+            $entradas = $resultado["result"];
             if (!empty($entradas)) :
                 while ($entrada = mysqli_fetch_assoc($entradas)) :
             ?>
@@ -29,9 +38,22 @@ require_once "utils/helpers.php";
             ?>
         </div>
 
-        <button class="main-button">
-            <a href="entradas.php">Ver todas</a>
-        </button>
+        <section class="navigation_buttons">
+            <?php
+            if ($page != 1) :
+                echo "<button class='main-button'><a href='index.php?page=" . ($page - 1) . "'>" . ($page - 1) . "</a></button>";
+            endif;
+            ?>
+            <button class="middle-button">
+                <?= $page ?>
+            </button>
+            <?php
+            if (($entradas->num_rows + ($page - 1) * 4) < $resultado["total"]) :
+                echo "<button class='main-button'><a href='index.php?page=" . ($page + 1) . "'>" . ($page + 1) . "</a></button>";
+            endif;
+            ?>
+        </section>
+
     </main>
 
     <?php require_once "includes/aside.php"; ?>
