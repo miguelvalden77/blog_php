@@ -23,6 +23,10 @@ class ComposerStaticInit2d6d37b09b3e93be53e8d21814c0e8a1
         array (
             'PhpOption\\' => 10,
         ),
+        'M' => 
+        array (
+            'Migue\\BlogPhp\\' => 14,
+        ),
         'G' => 
         array (
             'GrahamCampbell\\ResultType\\' => 26,
@@ -49,6 +53,10 @@ class ComposerStaticInit2d6d37b09b3e93be53e8d21814c0e8a1
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Migue\\BlogPhp\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'GrahamCampbell\\ResultType\\' => 
         array (
