@@ -12,7 +12,7 @@ $categoriaId = isset($_POST["categoriaId"]) ? $_POST["categoriaId"] : null;
 $usuarioId = $_SESSION["usuario"]["id"];
 
 
-$sql = "INSERT INTO `entradas` VALUES('$titulo', '$descripcion', '$categoriaId', '$usuarioId', NULL, NOW());";
+$sql = "INSERT INTO `entradas` (titulo, descripcion, categoriaId, usuarioId, fecha) VALUES('$titulo', '$descripcion', '$categoriaId', '$usuarioId', NOW());";
 
 mysqli_query($db, $sql);
 
