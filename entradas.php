@@ -9,7 +9,8 @@ require_once "utils/helpers.php";
         <h1 class="main-title">Entradas</h1>
 
         <?php
-        $entradas = getEntradas($db);
+        $resultado = getEntradas($db);
+        $entradas = $resultado["result"];
         if (!empty($entradas)) :
             while ($entrada = mysqli_fetch_assoc($entradas)) :
         ?>

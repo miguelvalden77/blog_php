@@ -42,8 +42,5 @@
                 endwhile;
             endif;
             ?>
-            <li class="inicio">
-                <a href="">Contacto</a>
-            </li>
         </nav>
     </header>

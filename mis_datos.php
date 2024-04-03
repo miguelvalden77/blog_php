@@ -34,7 +34,7 @@ require_once "utils/helpers.php";
 
         </form>
 
-        <h1 class="main-title">Mis entradas</h1>
+        <h1 class="main-title" style="margin-top: 1rem;">Mis entradas</h1>
 
         <div class="article_container">
             <?php

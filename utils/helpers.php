@@ -38,13 +38,13 @@ function getCategorias($db)
 function getEntradas($db, $page = 1, $categoria = null)
 {
 
-    $limit = $page * 4;
-    $saltar = $limit - 4;
+    $limit = 4;
+    $saltar = $page * 4 - 4;
 
-    $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id LIMIT $limit OFFSET $saltar";
+    $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoriaId = c.id ORDER BY e.fecha DESC LIMIT $limit OFFSET $saltar";
 
     if ($categoria != null) {
-        $sql = "SELECT * FROM entradas WHERE categoriaId = '$categoria' LIMIT $limit OFFSET $saltar";
+        $sql = "SELECT * FROM entradas WHERE categoriaId = '$categoria' ORDER BY fecha DESC LIMIT $limit OFFSET $saltar";
     }
 
     $entradas = mysqli_query($db, $sql);

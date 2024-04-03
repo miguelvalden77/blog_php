@@ -38,21 +38,23 @@ if (isset($_GET["page"])) {
             ?>
         </div>
 
-        <section class="navigation_buttons">
-            <?php
-            if ($page != 1) :
-                echo "<button class='main-button'><a href='index.php?page=" . ($page - 1) . "'>" . ($page - 1) . "</a></button>";
-            endif;
-            ?>
-            <button class="middle-button">
-                <?= $page ?>
-            </button>
-            <?php
-            if (($entradas->num_rows + ($page - 1) * 4) < $resultado["total"]) :
-                echo "<button class='main-button'><a href='index.php?page=" . ($page + 1) . "'>" . ($page + 1) . "</a></button>";
-            endif;
-            ?>
-        </section>
+        <?php if (3 > 2) : ?>
+            <section class="navigation_buttons">
+                <?php
+                if ($page != 1) :
+                    echo "<a href='index.php?page=" . ($page - 1) . "'><button class='main-button'>" . ($page - 1) . "</button></a>";
+                endif;
+                ?>
+                <button class="middle-button">
+                    <?= $page ?>
+                </button>
+                <?php
+                if (($entradas->num_rows + ($page - 1) * 4) < $resultado["total"]) :
+                    echo "<a href='index.php?page=" . ($page + 1) . "'><button class='main-button'>" . ($page + 1) . "</button></a>";
+                endif;
+                ?>
+            </section>
+        <?php endif; ?>
 
     </main>
 

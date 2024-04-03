@@ -40,21 +40,23 @@ $cat = intval($_GET["id"]);
             <?php endif; ?>
         </section>
 
-        <section class="navigation_buttons">
-            <?php
-            if ($page != 1) :
-                echo "<button class='main-button'><a href='categoria.php?page=" . ($page - 1) . "&categoria=" . $_GET["categoria"] .  "&id=" . $cat . "'>" . ($page - 1) . "</a></button>";
-            endif;
-            ?>
-            <button class="middle-button">
-                <?= $page ?>
-            </button>
-            <?php
-            if (($entradas->num_rows + ($page - 1) * 4) < $resultado["total"]) :
-                echo "<button class='main-button'><a href='categoria.php?page=" . ($page + 1) . "&categoria=" . $_GET["categoria"] . "&id=" . $cat . "'>" . ($page + 1) . "</a></button>";
-            endif;
-            ?>
-        </section>
+        <?php if (!empty($entradas)) : ?>
+            <section class="navigation_buttons">
+                <?php
+                if ($page != 1) :
+                    echo "<a href='categoria.php?page=" . ($page - 1) . "&categoria=" . $_GET["categoria"] .  "&id=" . $cat . "'><button class='main-button'>" . ($page - 1) . "</button></a>";
+                endif;
+                ?>
+                <button class="middle-button">
+                    <?= $page ?>
+                </button>
+                <?php
+                if (($entradas->num_rows + ($page - 1) * 4) < $resultado["total"]) :
+                    echo "<a href='categoria.php?page=" . ($page + 1) . "&categoria=" . $_GET["categoria"] . "&id=" . $cat . "'><button class='main-button'>" . ($page + 1) . "</button></a>";
+                endif;
+                ?>
+            </section>
+        <?php endif; ?>
     </main>
 
     <?php require_once "includes/aside.php"; ?>
