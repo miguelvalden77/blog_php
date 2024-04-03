@@ -16,7 +16,6 @@ if (isset($_POST)) {
   $errores = [];
 
   if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)) {
-    echo "El nombre es válido <br>";
     $nombre_validado = true;
   } else {
     $nombre_validado = false;
@@ -24,7 +23,6 @@ if (isset($_POST)) {
   }
 
   if (!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)) {
-    echo "Los apellidos son válidos <br>";
     $nombre_validado = true;
   } else {
     $nombre_validado = false;
@@ -32,7 +30,6 @@ if (isset($_POST)) {
   }
 
   if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "El email es válido <br>";
     $email_validado = true;
   } else {
     $email_validado = false;
@@ -40,7 +37,6 @@ if (isset($_POST)) {
   }
 
   if (!empty($contraseña)) {
-    echo "La contraseña no es válida <br>";
     $contraseña_validado = true;
   } else {
     $contraseña_validado = false;
