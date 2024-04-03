@@ -1,6 +1,6 @@
 <?php
 
-$server = "monorail.proxy.rlwy.net";
+$server = "monorail.proxy.rlwy.net:38119";
 $username = "root";
 $password = "HjBPkzlITifclLrZzpwLrUFFNZgNbSNj";
 $database = "railway";
