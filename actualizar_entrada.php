@@ -2,9 +2,9 @@
 
 require_once "includes/db.php";
 
-// if(!isset($_POST)){
-//     header("Location: editar_entrada.php");
-// }
+if (!isset($_POST)) {
+    header("Location: editar_entrada.php");
+}
 
 $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
 $descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : null;
